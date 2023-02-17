@@ -454,53 +454,54 @@ jobs:
 workflows:
   default:
     jobs:
-      - build-frontend
-      - build-backend
-      - test-frontend
-        # requires: [build-backend]
-        # context:
-        #   - UDAPEOPLE
-      - test-backend
-        # requires: [build-backend]
-        # context:
-        #   - UDAPEOPLE
-      - scan-frontend
-        # requires: [build-backend]
-        # context:
-        #   - UDAPEOPLE
-      - scan-backend
-        # requires: [build-backend]
-        # context:
-        #   - UDAPEOPLE
-      - deploy-infrastructure:
-          requires: [scan-backend]
-          filters:
-            branches:
-              only: [master]
-          # context:
-          #   - UDAPEOPLE
-      - configure-infrastructure:
-          requires: [deploy-infrastructure]
-          # context:
-          #   - UDAPEOPLE
-      # - run-migrations:
+      # - build-frontend
+      # - build-backend
+      # - test-frontend
+      #   # requires: [build-backend]
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - test-backend
+      #   # requires: [build-backend]
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - scan-frontend
+      #   # requires: [build-backend]
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - scan-backend
+      #   # requires: [build-backend]
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - deploy-infrastructure:
+      #     requires: [test-frontend]
+      #     filters:
+      #       branches:
+      #         only: [master]
+      #     # context:
+      #     #   - UDAPEOPLE
+      # - configure-infrastructure:
+      #     requires: [deploy-infrastructure]
+      #     # context:
+      #     #   - UDAPEOPLE
+      - run-migrations
       # requires: [deploy-infrastructure]
       # context:
       #   - UDAPEOPLE
-      - deploy-frontend:
-          requires: [configure-infrastructure]
+      # - deploy-frontend:
+      #     requires: [configure-infrastructure]
       # context:
       #   - UDAPEOPLE
       - deploy-backend:
-          requires: [configure-infrastructure]
+          requires: [run-migrations]
+          # requires: [configure-infrastructure]
           # context:
           #   - UDAPEOPLE
       # - smoke-test:
       #     requires: [deploy-backend, deploy-frontend]
       # context:
       #   - UDAPEOPLE
-      - cloudfront-update:
-          requires: [deploy-frontend]
+      # - cloudfront-update:
+      #     requires: [deploy-frontend]
       # - cleanup:
 
       #     requires: [cloudfront-update]
