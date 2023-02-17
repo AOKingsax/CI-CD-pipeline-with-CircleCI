@@ -456,20 +456,16 @@ workflows:
     jobs:
       - build-frontend
       - build-backend
-      - test-frontend:
-          requires: [build-backend]
+      - test-frontend
         # context:
         #   - UDAPEOPLE
-      - test-backend:
-          requires: [build-backend]
+      - test-backend
         # context:
         #   - UDAPEOPLE
-      - scan-frontend:
-          requires: [build-backend]
+      - scan-frontend
         # context:
         #   - UDAPEOPLE
-      - scan-backend:
-          requires: [build-backend]
+      - scan-backend
         # context:
         #   - UDAPEOPLE
       - deploy-infrastructure:
@@ -488,11 +484,11 @@ workflows:
       # context:
       #   - UDAPEOPLE
       - deploy-frontend:
-          requires: [configure-infrastructure]
+          requires: [deploy-infrastructure]
       # context:
       #   - UDAPEOPLE
       - deploy-backend:
-          requires: [run-migrations]
+          requires: [deploy-frontend]
           # requires: [configure-infrastructure]
           # context:
           #   - UDAPEOPLE
