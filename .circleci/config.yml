@@ -507,6 +507,6 @@ workflows:
       # context:
       #   - UDAPEOPLE
       - cloudfront-update:
-          requires: [deploy-frontend, deploy backend]
+          requires: [deploy-frontend, deploy-backend]
       # - cleanup:
       #     requires: [cloudfront-update]
