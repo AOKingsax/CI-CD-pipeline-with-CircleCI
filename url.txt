@@ -1,0 +1,16 @@
+THIS FILE CONTAINS RELEVANT LINKS FOR THE UDAPEOPLE PROJECT
+
+GITHUB LINK [URL1]
+https://github.com/aokingsax/ci-cd-pipeline-with-circleci
+
+FRONT-END S3 BUCKECT [URL02]
+http://udapeople-a5e52f7.s3-website-us-east-1.amazonaws.com
+
+CLOUDFRONT DISTRIBUTION
+https://d1jsgifiq7u7gt.cloudfront.net/
+
+BACKEND APPLICATION URL
+34.238.133.62
+
+PROMETHEUS SERVER PUBLIC IP/DNS
+34.193.80.146
