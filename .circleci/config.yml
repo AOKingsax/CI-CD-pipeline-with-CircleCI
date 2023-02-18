@@ -465,48 +465,48 @@ jobs:
 workflows:
   default:
     jobs:
-      - build-frontend
-      - build-backend
-      - test-frontend
-        # context:
-        #   - UDAPEOPLE
-      - test-backend
-        # context:
-        #   - UDAPEOPLE
-      - scan-frontend
-        # context:
-        #   - UDAPEOPLE
-      - scan-backend
-        # context:
-        #   - UDAPEOPLE
-      - deploy-infrastructure:
-          requires: [test-frontend]
-          filters:
-            branches:
-              only: [master]
-          # context:
-          #   - UDAPEOPLE
-      - configure-infrastructure:
-          requires: [deploy-infrastructure]
-          # context:
-          #   - UDAPEOPLE
-      - run-migrations:
-          requires: [deploy-infrastructure]
+      # - build-frontend
+      # - build-backend
+      # - test-frontend
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - test-backend
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - scan-frontend
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - scan-backend
+      #   # context:
+      #   #   - UDAPEOPLE
+      # - deploy-infrastructure:
+      #     requires: [test-frontend]
+      #     filters:
+      #       branches:
+      #         only: [master]
+      #     # context:
+      #     #   - UDAPEOPLE
+      # - configure-infrastructure:
+      #     requires: [deploy-infrastructure]
+      #     # context:
+      #     #   - UDAPEOPLE
+      # - run-migrations:
+      #     requires: [deploy-infrastructure]
+      # # context:
+      # #   - UDAPEOPLE
+      # - deploy-frontend:
+      #     requires: [deploy-infrastructure]
+      # # context:
+      # #   - UDAPEOPLE
+      # - deploy-backend:
+      #     requires: [run-migrations, deploy-frontend]
       # context:
       #   - UDAPEOPLE
-      - deploy-frontend:
-          requires: [deploy-infrastructure]
-      # context:
-      #   - UDAPEOPLE
-      - deploy-backend:
-          requires: [run-migrations, deploy-frontend]
-        # context:
-        #   - UDAPEOPLE
       # - smoke-test:
       #     requires: [deploy-backend]
       # context:
       #   - UDAPEOPLE
-      - cloudfront-update:
-          requires: [deploy-frontend, deploy-backend]
+      # - cloudfront-update:
+      #     requires: [deploy-frontend, deploy-backend]
       # - cleanup:
       #     requires: [cloudfront-update]
